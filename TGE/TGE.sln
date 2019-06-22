@@ -1,14 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGE", "Assembly-CSharp.csproj", "{DBFA7288-8651-2213-43A6-3DDE277776D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{DBFA7288-8651-2213-43A6-3DDE277776D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBFA7288-8651-2213-43A6-3DDE277776D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBFA7288-8651-2213-43A6-3DDE277776D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBFA7288-8651-2213-43A6-3DDE277776D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
