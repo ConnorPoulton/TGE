@@ -1,24 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoomManager : MonoBehaviour
 {
-    public Room currentRoom;
-    private static RoomManager _instance; 
+    [SerializeField]
+    private Room _currentRoom;
+    public static RoomManager instance;
+    [SerializeField]
+    private Text _roomDescription;
+    public Canvas ButtonCanvas;
 
     void Awake()
     {
-        _instance = this;
+        instance = this;
+        LoadRoom();
     }
 
     public void LoadRoom()
     {
-
+        _roomDescription.text = _currentRoom.description;
     }
 
     public void ChangeRoom(Room newRoom)
     {
-
+        _currentRoom = newRoom;
+        LoadRoom();
     }
 }
