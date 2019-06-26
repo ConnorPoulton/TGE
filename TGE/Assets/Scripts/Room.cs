@@ -7,5 +7,5 @@ public class Room : ScriptableObject
 {
     [TextArea]
     public string description;
-    public List<ICommand> Icommands = new List<ICommand>();	
+    public List<PlayerOption> playerOptions = new List<PlayerOption>();	
 }

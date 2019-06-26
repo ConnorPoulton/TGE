@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "commands/exit")]
 public class Exit : ICommand {
 
-    public Room currentRoom; 
+    public Room newRoom; 
 
-    public  override void Action(GameObject target)
+    public  override void Action ()
     {
-        RoomManager.instance.ChangeRoom(currentRoom);
+        RoomManager.instance.ChangeRoom(newRoom);
     }
 
 }
