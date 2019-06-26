@@ -10,7 +10,7 @@ public class RoomManager : MonoBehaviour
     public static RoomManager instance;
     [SerializeField]
     private Text _roomDescription;
-    public Canvas ButtonCanvas;
+    public GameObject buttonPanel; 
 
     void Awake()
     {
