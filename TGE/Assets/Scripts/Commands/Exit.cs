@@ -9,6 +9,7 @@ public class Exit : ICommand {
 
     public  override void Action ()
     {
+        RoomManager.instance.OverwriteCurrentRoomDescription("This is a test");
         RoomManager.instance.ChangeRoom(newRoom);
     }
 

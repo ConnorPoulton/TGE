@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerOption {
 
-    public ICommand command;
+    public ICommand[] commands;
     [TextArea]
     public string description;
 }

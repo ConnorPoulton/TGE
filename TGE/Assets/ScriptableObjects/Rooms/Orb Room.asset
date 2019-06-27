@@ -11,7 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd1d596e636e1946894b4dd91e194e8, type: 3}
   m_Name: Orb Room
   m_EditorClassIdentifier: 
-  description: An orb on a pedistool is hovering before you.
+  description: 'The pedistool where the orb once sat lays before you. '
   playerOptions:
-  - command: {fileID: 11400000, guid: d03f217842774044890fe84aeff63c7d, type: 2}
+  - commands:
+    - {fileID: 11400000, guid: d03f217842774044890fe84aeff63c7d, type: 2}
+    description: Head back
+  - commands:
+    - {fileID: 11400000, guid: 8acbf22335a954d4780d2615da3613b0, type: 2}
+    - {fileID: 11400000, guid: f96ecf40384c36d428e77fb492770f21, type: 2}
     description: Head back

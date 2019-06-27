@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f02480a49ab02468c7af39fc4a42e0, type: 3}
+  m_Name: GetOrb
+  m_EditorClassIdentifier: 
+  itemGetDescription: Picked up the orb
+  itemToAdd: {fileID: 11400000, guid: cdb0c4ae2c58c634aa312cad11e01a63, type: 2}

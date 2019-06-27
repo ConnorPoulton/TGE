@@ -12,6 +12,7 @@ public class RoomManager : MonoBehaviour
     private Text _roomDescription;
     public GameObject buttonPanel;
     public ButtonPool buttonPool;
+    private List<Room> roomInstances = new List<Room>();
 
     void Awake()
     {
@@ -26,8 +27,11 @@ public class RoomManager : MonoBehaviour
         {
             GameObject button = buttonPool.GetPooledObject();
             button.transform.SetParent(buttonPanel.transform);
-            button.GetComponentInChildren<Text>().text = option.description;
-            button.GetComponentInChildren<Button>().onClick.AddListener(option.command.Action);
+            button.GetComponentInChildren<Text>().text = option.description;          
+            for (int i = 0; i < option.commands.Length; i++)
+            {
+                button.GetComponentInChildren<Button>().onClick.AddListener(option.commands[i].Action);
+            }
         }
     }
 
@@ -39,5 +43,15 @@ public class RoomManager : MonoBehaviour
             buttonPool.ReturnToPool(child.gameObject);
         }
         LoadRoom();
+    }
+
+    public void AddToRoomDescription(string toAdd)
+    {
+        _roomDescription.text += (" " + toAdd);
+    }
+
+    public void OverwriteCurrentRoomDescription(string newDescription)
+    {
+        _currentRoom.description = newDescription;
     }
 }
