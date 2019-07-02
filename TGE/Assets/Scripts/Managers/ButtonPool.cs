@@ -1,49 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonPool : MonoBehaviour {
 
     public GameObject prefab;
     public Stack<GameObject> prefabStack = new Stack<GameObject>();
 
-
     public GameObject GetPooledObject()
     {
-        GameObject prefabToReturn;
-        if (prefabStack.Count > 0)
+        Debug.Log("get pooled object");
+        GameObject prefabToSpawn;
+        if (prefabStack.Count == 0)
         {
-            prefabToReturn = prefabStack.Pop();
-        } else
-        {
-            prefabToReturn = GameObject.Instantiate(prefab);
-            //attach the PooledObject helper class to ID which pool the prefab came from
-            PooledObject pooledObject = prefabToReturn.AddComponent<PooledObject> ();
-            pooledObject.pool = this;
+            prefabToSpawn = GameObject.Instantiate(prefab);
+            prefabToSpawn.AddComponent<Pool>().pool = this;
+            return prefabToSpawn;
         }
-        prefabToReturn.SetActive (true);
-        prefabToReturn.transform.SetParent(null);
-        return prefabToReturn;
+        else
+        {
+            prefabToSpawn = prefabStack.Pop();
+            return prefabToSpawn;
+        }
     }
 
     public void ReturnToPool(GameObject toReturn)
     {
-        PooledObject OriginPool = toReturn.GetComponent<PooledObject>();
-        if (OriginPool != null && OriginPool == this)
+        if (toReturn.GetComponent<Pool>().pool == this)
         {
-            toReturn.transform.SetParent(transform);
             toReturn.SetActive(false);
+            toReturn.transform.SetParent(null);
             prefabStack.Push(toReturn);
-        } else
+        }
+        else
         {
-            Debug.LogWarning(toReturn.name + "was returned to the wrong pool! Destroying...");
             Destroy(toReturn);
+            Debug.Log("Object sent to wrong pool. Deleting...");
         }
     }
 }
 
-//this is a small helper class used to identify which pool an object is associated with
-public class PooledObject : MonoBehaviour
+public class Pool : MonoBehaviour
 {
     public ButtonPool pool;
 }
+

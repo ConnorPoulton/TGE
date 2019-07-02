@@ -10,8 +10,8 @@ public class RoomManager : MonoBehaviour
     public static RoomManager instance;
     [SerializeField]
     private Text _roomDescription;
-    public GameObject buttonPanel;
     public ButtonPool buttonPool;
+    public GameObject buttonPanel;
     private List<Room> roomInstances = new List<Room>();
 
     void Awake()
@@ -25,6 +25,7 @@ public class RoomManager : MonoBehaviour
         _roomDescription.text = _currentRoom.description;
         foreach (PlayerOption option in _currentRoom.playerOptions)
         {
+            Debug.Log("test");
             GameObject button = buttonPool.GetPooledObject();
             button.transform.SetParent(buttonPanel.transform);
             button.GetComponentInChildren<Text>().text = option.description;          
@@ -53,5 +54,6 @@ public class RoomManager : MonoBehaviour
     public void OverwriteCurrentRoomDescription(string newDescription)
     {
         _currentRoom.description = newDescription;
+        AddToRoomDescription(newDescription);
     }
 }

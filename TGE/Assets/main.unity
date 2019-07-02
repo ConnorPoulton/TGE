@@ -918,6 +918,7 @@ GameObject:
   - component: {fileID: 1082522272}
   - component: {fileID: 1082522271}
   - component: {fileID: 1082522273}
+  - component: {fileID: 1082522274}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -938,8 +939,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentRoom: {fileID: 11400000, guid: 8f8032bd7077b3249b73a463a76e21bc, type: 2}
   _roomDescription: {fileID: 1802725636}
-  buttonPanel: {fileID: 1149226457}
   buttonPool: {fileID: 1082522273}
+  buttonPanel: {fileID: 1149226457}
 --- !u!4 &1082522272
 Transform:
   m_ObjectHideFlags: 0
@@ -965,6 +966,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1440211209247216, guid: caa4c817289acdd499af33978a11db66, type: 2}
+--- !u!114 &1082522274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1082522270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae88f39c2db8b084cba54ceb60f2d2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1149226457
 GameObject:
   m_ObjectHideFlags: 0

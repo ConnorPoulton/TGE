@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd1d596e636e1946894b4dd91e194e8, type: 3}
   m_Name: Starting Room
   m_EditorClassIdentifier: 
-  description: This is a test
+  description: You are in the starting room
   playerOptions:
   - commands:
     - {fileID: 11400000, guid: 16b7f73b302dc274b8aaae1676dd3046, type: 2}
