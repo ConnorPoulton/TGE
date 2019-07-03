@@ -27,7 +27,7 @@ public class RoomManager : MonoBehaviour
         {
             Debug.Log("test");
             GameObject button = buttonPool.GetPooledObject();
-            button.transform.SetParent(buttonPanel.transform);
+            button.transform.SetParent(buttonPanel.transform, false);
             button.GetComponentInChildren<Text>().text = option.description;          
             for (int i = 0; i < option.commands.Length; i++)
             {
